@@ -31,7 +31,7 @@ class App extends Component {
 
   // updateSize
   updateSize(val) {
-    this.setState({fontColor: val});
+    this.setState({fontSize: val});
   }
 
   // updateFamily
