@@ -8,19 +8,17 @@ export default class SizeChanger extends Component {
     };
   }
 
-// children don't update their value based on the edit toggle without this method
-  componentWillReceiveProps(props) {
+  // componentWillReceiveProps
+    componentWillReceiveProps(props) {
     this.setState({allowEdit: props.allowEdit});
   }
 
   render() {
     return (
-      <select className="dropDownContainer" onChange={ (e) => this.props.update( parseInt(e.target.value)) } disabled={ this.state.allowEdit === "false" }>
+      <select onChange={(e) => this.props.update(parseInt(e.target.value))}  className="dropDownContainer" disabled={this.state.allowEdit === "false"}>
         <option value="12"> 12 </option>
         <option value="13"> 13 </option>
         <option value="14"> 14 </option>
-        <option value="15"> 15 </option>
-        <option value="16"> 16 </option>
       </select>
     )
   }

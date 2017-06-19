@@ -8,17 +8,17 @@ export default class FamilyChanger extends Component {
     };
   }
 
- // children don't update their value based on the edit toggle without this method
-  componentWillReceiveProps(props) {
+  // componentWillReceiveProps
+    componentWillReceiveProps(props) {
     this.setState({allowEdit: props.allowEdit});
   }
 
   render() {
     return (
-      <select className="dropDownContainer" onChange={ (e) => this.props.update(e.target.value) } disabled={ this.state.allowEdit === "false" }>
+      <select onChange={(e) => this.props.update(e.target.value)}  className="dropDownContainer" disabled={this.state.allowEdit === "false"}>
         <option value="monospace"> Monospace </option>
         <option value="arial"> Arial </option>
-        <option value="verdana"> Verdana </option>
+        <option value="courier"> Courier </option>
       </select>
     )
   }
